@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+.main {
+
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.3) 50%), url('https://i.pinimg.com/736x/f9/e9/29/f9e92987febecf8d2af34a66aae2c771.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    /* Transparent aesthetic bar */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFD580;
+    /* Soft butter-yellow on hover */
+}
+
+/* Music Icon */
+.navbar i {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.gallery {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fffaf0;
+}
+
+.gallery h2 {
+    font-family: 'Playfair Display', serif;
+    color: #d4a373;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.masonry {
+    column-count: 3;
+    /* number of columns */
+    column-gap: 15px;
+    /* space between columns */
+}
+
+.masonry img {
+    width: 100%;
+    /* fills the column width */
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    /* ensures images keep aspect ratio */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
